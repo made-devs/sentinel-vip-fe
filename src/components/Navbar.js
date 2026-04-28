@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,41 +15,46 @@ export default function Navbar() {
       setScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: "Debt Recovery", href: "#debt-recovery" },
-    { name: "Layanan", href: "#layanan" },
-    { name: "Tentang Kami", href: "#tentang" },
-    { name: "Kontak", href: "#kontak" },
+    { name: 'Beranda', href: '/' },
+    { name: 'Layanan', href: '/services' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Testimoni', href: '/testimoni' },
+    { name: 'Tentang Kami', href: '/about' },
   ];
 
   // Desktop Menu Animation
   const navListVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.3 }
-    }
+      transition: { staggerChildren: 0.1, delayChildren: 0.3 },
+    },
   };
 
   const navItemVariants = {
     hidden: { y: -10, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 300, damping: 24 } }
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: 'spring', stiffness: 300, damping: 24 },
+    },
   };
 
   // Mobile Menu Animation (Curtain reveal from top)
   const menuVariants = {
-    closed: { 
-      clipPath: "inset(0% 0% 100% 0%)",
-      transition: { type: "tween", duration: 0.5, ease: [0.76, 0, 0.24, 1] }
+    closed: {
+      clipPath: 'inset(0% 0% 100% 0%)',
+      transition: { type: 'tween', duration: 0.5, ease: [0.76, 0, 0.24, 1] },
     },
-    open: { 
-      clipPath: "inset(0% 0% 0% 0%)",
-      transition: { type: "tween", duration: 0.6, ease: [0.76, 0, 0.24, 1] }
-    }
+    open: {
+      clipPath: 'inset(0% 0% 0% 0%)',
+      transition: { type: 'tween', duration: 0.6, ease: [0.76, 0, 0.24, 1] },
+    },
   };
 
   return (
@@ -61,20 +66,23 @@ export default function Navbar() {
         className={`fixed top-0 left-0 w-full z-50 flex justify-center py-6 px-4 transition-all duration-500`}
       >
         {/* Floating Capsule Style Navbar */}
-        <div 
+        <div
           className={`w-full max-w-6xl rounded-full px-6 py-3 flex items-center justify-between transition-all duration-500 ${
-            scrolled 
-              ? "bg-dark/80 backdrop-blur-xl border border-gold/30 shadow-[0_4_30px_rgba(212,175,55,0.1)]" 
-              : "bg-dark/30 backdrop-blur-md border border-white/10"
+            scrolled
+              ? 'bg-dark/80 backdrop-blur-xl border border-gold/30 shadow-[0_4_30px_rgba(212,175,55,0.1)]'
+              : 'bg-dark/30 backdrop-blur-md border border-white/10'
           }`}
         >
           {/* Logo */}
-          <Link href="/" className="relative z-50 flex items-center gap-3 group">
+          <Link
+            href="/"
+            className="relative z-50 flex items-center gap-3 group"
+          >
             <div className="relative w-12 h-12 transition-transform duration-500 group-hover:scale-105">
-              <Image 
-                src="/logo-vip.webp" 
-                alt="Sentinel VIP Logo" 
-                fill 
+              <Image
+                src="/logo-vip.webp"
+                alt="Sentinel VIP Logo"
+                fill
                 className="object-contain"
                 priority
               />
@@ -90,7 +98,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <motion.nav 
+          <motion.nav
             variants={navListVariants}
             initial="hidden"
             animate="visible"
@@ -98,7 +106,7 @@ export default function Navbar() {
           >
             {navLinks.map((link, idx) => (
               <motion.div key={idx} variants={navItemVariants}>
-                <Link 
+                <Link
                   href={link.href}
                   className="text-[11px] font-bold tracking-[0.15em] uppercase text-text-offwhite hover:text-gold transition-all duration-300 relative group"
                 >
@@ -107,10 +115,10 @@ export default function Navbar() {
                 </Link>
               </motion.div>
             ))}
-            
+
             <motion.div variants={navItemVariants}>
-              <Link 
-                href="#konsultasi"
+              <Link
+                href="/contact"
                 className="ml-2 px-6 py-2.5 bg-gold/10 border border-gold text-gold text-xs font-bold uppercase tracking-[0.15em] hover:bg-gold hover:text-dark transition-all duration-300 backdrop-blur-sm rounded-full"
               >
                 Konsultasi
@@ -119,13 +127,13 @@ export default function Navbar() {
           </motion.nav>
 
           {/* Mobile Toggle Button */}
-          <button 
+          <button
             className="md:hidden relative z-50 w-10 h-10 flex items-center justify-center focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
             <AnimatePresence mode="wait">
               {isOpen ? (
-                <motion.div 
+                <motion.div
                   key="close"
                   initial={{ opacity: 0, rotate: -90 }}
                   animate={{ opacity: 1, rotate: 0 }}
@@ -135,7 +143,7 @@ export default function Navbar() {
                   <X className="w-7 h-7 text-gold" />
                 </motion.div>
               ) : (
-                <motion.div 
+                <motion.div
                   key="menu"
                   initial={{ opacity: 0, rotate: 90 }}
                   animate={{ opacity: 1, rotate: 0 }}
@@ -151,23 +159,27 @@ export default function Navbar() {
       </motion.header>
 
       {/* Mobile Fullscreen Menu (Curtain Drop) */}
-      <motion.div 
+      <motion.div
         className="fixed inset-0 z-40 bg-dark/95 backdrop-blur-xl flex flex-col items-center justify-center md:hidden"
         initial="closed"
-        animate={isOpen ? "open" : "closed"}
+        animate={isOpen ? 'open' : 'closed'}
         variants={menuVariants}
-        style={{ pointerEvents: isOpen ? "auto" : "none" }}
+        style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
       >
         <div className="flex flex-col items-center gap-8 px-6 text-center w-full max-w-sm mt-10">
           {navLinks.map((link, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ y: 50, opacity: 0 }}
               animate={isOpen ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
-              transition={{ delay: isOpen ? 0.3 + (idx * 0.1) : 0, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                delay: isOpen ? 0.3 + idx * 0.1 : 0,
+                duration: 0.5,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="w-full overflow-hidden"
             >
-              <Link 
+              <Link
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="block text-3xl font-heading font-light uppercase text-text-offwhite hover:text-gold hover:tracking-widest transition-all duration-300 w-full"
@@ -176,15 +188,15 @@ export default function Navbar() {
               </Link>
             </motion.div>
           ))}
-          
+
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={isOpen ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
             transition={{ delay: isOpen ? 0.7 : 0, duration: 0.5 }}
             className="pt-10 w-full"
           >
-            <Link 
-              href="#konsultasi"
+            <Link
+              href="/contact"
               onClick={() => setIsOpen(false)}
               className="block w-full border border-gold text-gold py-4 text-sm font-bold uppercase tracking-[0.2em] text-center hover:bg-gold hover:text-dark transition-all duration-300 rounded-full"
             >

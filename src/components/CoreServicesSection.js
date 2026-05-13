@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { UserCheck, Search, ShieldCheck, Lock } from 'lucide-react';
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { UserCheck, Search, ShieldCheck, Lock } from "lucide-react";
 
 export default function CoreServicesSection() {
   const sectionRef = useRef(null);
@@ -21,10 +21,10 @@ export default function CoreServicesSection() {
           opacity: 1,
           y: 0,
           duration: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 75%',
+            start: "top 75%",
           },
         },
       );
@@ -39,22 +39,22 @@ export default function CoreServicesSection() {
           scale: 1,
           duration: 1,
           stagger: 0.15,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: cardsRef.current[0],
-            start: 'top 85%',
+            start: "top 85%",
           },
         },
       );
 
       // Section parallax backdrop
-      gsap.to('.services-parallax-bg', {
+      gsap.to(".services-parallax-bg", {
         yPercent: -15,
-        ease: 'none',
+        ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
+          start: "top bottom",
+          end: "bottom top",
           scrub: true,
         },
       });
@@ -71,36 +71,36 @@ export default function CoreServicesSection() {
 
   const coreServices = [
     {
-      id: '01',
-      title: 'Bodyguard',
-      subtitle: 'Pengawalan Melekat VIP',
-      desc: 'Perlindungan maksimal oleh personel terlatih untuk keamanan tingkat tinggi dan penjagaan privasi Anda di setiap agenda penting.',
+      id: "01",
+      title: "Bodyguard",
+      subtitle: "Pengawalan Melekat VIP",
+      desc: "Perlindungan maksimal oleh personel terlatih untuk keamanan tingkat tinggi dan penjagaan privasi Anda di setiap agenda penting.",
       icon: <UserCheck className="w-6 h-6 text-gold" />,
-      img: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=800&q=80',
+      img: "/bodyguard.webp",
     },
     {
-      id: '02',
-      title: 'Detektif Swasta',
-      subtitle: 'Investigasi Privat & Corporate',
-      desc: 'Menyediakan intelijen komprehensif, pencarian bukti akurat, dan pemantauan senyap berbasis keabsahan hukum untuk mengambil keputusan krusial.',
+      id: "02",
+      title: "Detektif Swasta",
+      subtitle: "Investigasi Privat & Corporate",
+      desc: "Menyediakan intelijen komprehensif, pencarian bukti akurat, dan pemantauan senyap berbasis keabsahan hukum untuk mengambil keputusan krusial.",
       icon: <Search className="w-6 h-6 text-gold" />,
-      img: 'https://images.unsplash.com/photo-1453873531674-2151bcd01707?auto=format&fit=crop&w=800&q=80',
+      img: "/detektif.webp",
     },
     {
-      id: '03',
-      title: 'Pengamanan',
-      subtitle: 'Manajemen Keamanan Event & Aset',
-      desc: 'Sistem keamanan terpadu (fisik dan strategis) untuk mengamankan lokasi, perumahan elit, acara berskala masif, maupun aset perusahaan.',
+      id: "03",
+      title: "Pengamanan",
+      subtitle: "Manajemen Keamanan Event & Aset",
+      desc: "Sistem keamanan terpadu (fisik dan strategis) untuk mengamankan lokasi, perumahan elit, acara berskala masif, maupun aset perusahaan.",
       icon: <ShieldCheck className="w-6 h-6 text-gold" />,
-      img: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80',
+      img: "/pengamanan.webp",
     },
     {
-      id: '04',
-      title: 'Secure VIP',
-      subtitle: 'Protokol Keselamatan Transit',
-      desc: 'Transportasi taktis dan rute pengawalan khusus bagi eksekutif untuk mitigasi risiko, terhindar dari eskalasi gangguan publik di lapangan.',
+      id: "04",
+      title: "Secure VIP",
+      subtitle: "Protokol Keselamatan Transit",
+      desc: "Transportasi taktis dan rute pengawalan khusus bagi eksekutif untuk mitigasi risiko, terhindar dari eskalasi gangguan publik di lapangan.",
       icon: <Lock className="w-6 h-6 text-gold" />,
-      img: 'https://images.unsplash.com/photo-1542314831-c6a4d27160c9?auto=format&fit=crop&w=800&q=80',
+      img: "/vip.webp",
     },
   ];
 
@@ -135,7 +135,7 @@ export default function CoreServicesSection() {
             <div className="w-8 h-[1px] bg-gold"></div>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-text-offwhite font-heading uppercase tracking-wide">
-            Executive{' '}
+            Executive{" "}
             <span className="text-gold italic font-light">Services</span>
           </h2>
           <p className="text-text-muted font-light max-w-2xl text-lg mt-4">
@@ -159,7 +159,7 @@ export default function CoreServicesSection() {
                   src={service.img}
                   alt={service.title}
                   fill
-                  className="object-cover object-center opacity-40 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105"
+                  className="object-cover object-center opacity-80 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-transparent group-hover:from-dark group-hover:to-transparent transition-all duration-500" />
               </div>
@@ -192,7 +192,7 @@ export default function CoreServicesSection() {
                         {service.icon}
                       </div>
                       <span className="text-xs uppercase tracking-widest text-gold opacity-0 group-hover:opacity-100 transition-opacity delay-300">
-                        Pelajari{' '}
+                        Pelajari{" "}
                         <span className="hidden lg:inline">Selengkapnya</span>
                       </span>
                     </div>

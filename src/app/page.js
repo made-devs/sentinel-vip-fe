@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
-import { Shield, ChevronDown, CheckCircle } from 'lucide-react';
-import DebtRecoverySection from '@/components/DebtRecoverySection';
-import CoreServicesSection from '@/components/CoreServicesSection';
-import GallerySection from '@/components/GallerySection';
-import TestimonialSection from '@/components/TestimonialSection';
-import AuthoritySection from '@/components/AuthoritySection';
-import ContactFooterSection from '@/components/ContactFooterSection';
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
+import { Shield, ChevronDown, CheckCircle } from "lucide-react";
+import DebtRecoverySection from "@/components/DebtRecoverySection";
+import CoreServicesSection from "@/components/CoreServicesSection";
+import GallerySection from "@/components/GallerySection";
+import TestimonialSection from "@/components/TestimonialSection";
+import AuthoritySection from "@/components/AuthoritySection";
+import ContactFooterSection from "@/components/ContactFooterSection";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -25,8 +25,8 @@ export default function Home() {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
+      orientation: "vertical",
+      gestureOrientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1,
       smoothTouch: false,
@@ -46,7 +46,7 @@ export default function Home() {
     tl.fromTo(
       bgRef.current,
       { scale: 1.1, autoAlpha: 0 },
-      { scale: 1, autoAlpha: 1, duration: 2, ease: 'power3.inOut' },
+      { scale: 1, autoAlpha: 1, duration: 2, ease: "power3.inOut" },
     )
       .fromTo(
         textRef.current,
@@ -56,25 +56,25 @@ export default function Home() {
           autoAlpha: 1,
           duration: 1,
           stagger: 0.15,
-          ease: 'power3.out',
+          ease: "power3.out",
         },
-        '-=1',
+        "-=1",
       )
       .fromTo(
         bottomScrollRef.current,
         { autoAlpha: 0, y: -20 },
-        { autoAlpha: 0.7, y: 0, duration: 1, ease: 'power2.out' },
-        '-=0.5',
+        { autoAlpha: 0.7, y: 0, duration: 1, ease: "power2.out" },
+        "-=0.5",
       );
 
     // Parallax effect on scroll
     gsap.to(bgRef.current, {
       yPercent: 30,
-      ease: 'none',
+      ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
-        start: 'top top',
-        end: 'bottom top',
+        start: "top top",
+        end: "bottom top",
         scrub: true,
       },
     });
@@ -104,7 +104,7 @@ export default function Home() {
           className="absolute inset-0 w-full h-full z-0 origin-center"
         >
           <Image
-            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1920&q=80"
+            src="/hero.webp"
             alt="Sentinel VIP Hero"
             fill
             className="object-cover object-center"
@@ -132,7 +132,7 @@ export default function Home() {
               className="text-5xl md:text-7xl lg:text-8xl text-text-offwhite leading-[1.1] uppercase"
             >
               We Protect <br />
-              What{' '}
+              What{" "}
               <span className="text-gold italic font-light font-heading">
                 Matters
               </span>
@@ -142,7 +142,7 @@ export default function Home() {
               ref={addToTextRef}
               className="text-lg md:text-xl text-text-muted max-w-2xl font-light leading-relaxed"
             >
-              Penyedia jasa eksklusif{' '}
+              Penyedia jasa eksklusif{" "}
               <strong className="text-white font-medium">Debt Recovery</strong>,
               Bodyguard, Detektif Swasta, dan Pengamanan VIP Profesional di
               Indonesia. Kami menjamin kerahasiaan, ketegasan, dan resolusi.
@@ -197,4 +197,3 @@ export default function Home() {
     </main>
   );
 }
-

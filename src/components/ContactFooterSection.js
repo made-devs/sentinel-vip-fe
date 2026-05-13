@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Phone, Mail, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Phone, Mail, MapPin, ArrowRight, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function ContactFooterSection() {
   const containerRef = useRef(null);
@@ -14,17 +14,17 @@ export default function ContactFooterSection() {
     let ctx = gsap.context(() => {
       // Glow and map effect in footer
       gsap.fromTo(
-        '.cta-box',
+        ".cta-box",
         { opacity: 0, scale: 0.9, y: 50 },
         {
           opacity: 1,
           scale: 1,
           y: 0,
           duration: 1.2,
-          ease: 'power4.out',
+          ease: "power4.out",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: 'top 85%',
+            start: "top 85%",
           },
         },
       );
@@ -54,10 +54,10 @@ export default function ContactFooterSection() {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-heading font-bold uppercase leading-tight drop-shadow-md">
-              Mulai{' '}
+              Mulai{" "}
               <span className="text-gold italic font-light font-heading">
                 Konsultasi
-              </span>{' '}
+              </span>{" "}
               Gratis Anda
             </h2>
             <p className="text-lg text-text-muted font-light max-w-md">

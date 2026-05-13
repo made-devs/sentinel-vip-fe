@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Award, Users, Crosshair, Scale } from 'lucide-react';
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Award, Users, Crosshair, Scale } from "lucide-react";
 
 export default function AuthoritySection() {
   const sectionRef = useRef(null);
@@ -14,17 +14,17 @@ export default function AuthoritySection() {
     let ctx = gsap.context(() => {
       // Split the banner reveal
       gsap.fromTo(
-        '.stat-item',
+        ".stat-item",
         { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
           stagger: 0.2,
           duration: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: 'top 80%',
+            start: "top 80%",
           },
         },
       );
@@ -34,9 +34,9 @@ export default function AuthoritySection() {
   }, []);
 
   const stats = [
-    { title: 'Aset Pulih', prefix: 'IDR', value: '2.1', suffix: 'Triliun+' },
-    { title: 'Tingkat Sukses', value: '98', suffix: '%' },
-    { title: 'Kasus Selesai', value: '500', suffix: '+' },
+    { title: "Aset Pulih", prefix: "IDR", value: "2.1", suffix: "Triliun+" },
+    { title: "Tingkat Sukses", value: "98", suffix: "%" },
+    { title: "Kasus Selesai", value: "500", suffix: "+" },
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function AuthoritySection() {
             <div
               key={idx}
               className={`stat-item flex flex-col items-center justify-center text-center space-y-2 ${
-                idx !== stats.length - 1 ? 'md:border-r border-gold/20' : ''
+                idx !== stats.length - 1 ? "md:border-r border-gold/20" : ""
               } px-4`}
             >
               <h4 className="text-text-muted uppercase tracking-widest text-sm font-semibold">
@@ -77,7 +77,7 @@ export default function AuthoritySection() {
           <div className="w-full lg:w-1/2 relative flex justify-center">
             <div className="relative w-full max-w-sm aspect-[4/5] rounded-bl-[100px] rounded-tr-[100px] overflow-hidden border border-gold/30">
               <Image
-                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
+                src="/cta.webp"
                 alt="Authority Force"
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
@@ -105,7 +105,7 @@ export default function AuthoritySection() {
                 <div className="w-12 h-[1px] bg-gold"></div>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl text-text-offwhite font-heading uppercase leading-tight">
-                Kekuatan, Rahasia, <br />{' '}
+                Kekuatan, Rahasia, <br />{" "}
                 <span className="text-gold italic font-light">
                   Eksklusivitas
                 </span>

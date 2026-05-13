@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
 import {
   Network,
   Crosshair,
@@ -14,8 +14,8 @@ import {
   ShieldAlert,
   ArrowRight,
   CheckCircle2,
-} from 'lucide-react';
-import ContactFooterSection from '@/components/ContactFooterSection';
+} from "lucide-react";
+import ContactFooterSection from "@/components/ContactFooterSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,7 +30,7 @@ export default function ServicesPage() {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
+      orientation: "vertical",
       smoothWheel: true,
     });
 
@@ -44,42 +44,42 @@ export default function ServicesPage() {
       // 2. Hero Animations
       const tl = gsap.timeline();
       tl.fromTo(
-        '.hero-img',
-        { scale: 1.2, filter: 'brightness(0.3)' },
+        ".hero-img",
+        { scale: 1.2, filter: "brightness(0.3)" },
         {
           scale: 1,
-          filter: 'brightness(0.6)',
+          filter: "brightness(0.6)",
           duration: 2,
-          ease: 'power3.out',
+          ease: "power3.out",
         },
       )
         .fromTo(
-          '.hero-title-line',
+          ".hero-title-line",
           { y: 100, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: 'power4.out' },
-          '-=1.5',
+          { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power4.out" },
+          "-=1.5",
         )
         .fromTo(
-          '.hero-subtitle',
+          ".hero-subtitle",
           { y: 30, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, ease: 'power3.out' },
-          '-=1',
+          { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
+          "-=1",
         );
 
       // Hero Parallax
-      gsap.to('.hero-img', {
+      gsap.to(".hero-img", {
         yPercent: 40,
-        ease: 'none',
+        ease: "none",
         scrollTrigger: {
           trigger: heroRef.current,
-          start: 'top top',
-          end: 'bottom top',
+          start: "top top",
+          end: "bottom top",
           scrub: true,
         },
       });
 
       // 3. Main Service (Debt Recovery) Reveal
-      const mainItems = gsap.utils.toArray('.main-service-reveal');
+      const mainItems = gsap.utils.toArray(".main-service-reveal");
       mainItems.forEach((item) => {
         gsap.fromTo(
           item,
@@ -88,17 +88,17 @@ export default function ServicesPage() {
             opacity: 1,
             y: 0,
             duration: 1,
-            ease: 'power3.out',
+            ease: "power3.out",
             scrollTrigger: {
               trigger: item,
-              start: 'top 85%',
+              start: "top 85%",
             },
           },
         );
       });
 
       // 4. Stacking Cards for Supporting Services
-      const cards = gsap.utils.toArray('.service-card');
+      const cards = gsap.utils.toArray(".service-card");
 
       cards.forEach((card, index) => {
         // As the next card comes up, scale down and fade out the current card
@@ -106,11 +106,11 @@ export default function ServicesPage() {
           gsap.to(card, {
             scale: 0.9,
             opacity: 0.4,
-            ease: 'none',
+            ease: "none",
             scrollTrigger: {
               trigger: cards[index + 1],
-              start: 'top bottom',
-              end: 'top top+=100', // adjust depending on sticky top value
+              start: "top bottom",
+              end: "top top+=100", // adjust depending on sticky top value
               scrub: true,
             },
           });
@@ -126,56 +126,56 @@ export default function ServicesPage() {
 
   const supportingServices = [
     {
-      id: '01',
-      title: 'Bodyguard VIP',
-      subtitle: 'Pengawalan Taktis Melekat',
-      desc: 'Sengketa finansial level atas rentan memicu ancaman fisik maupun intimidasi. Agen taktis kami (eks-prajurit & profesional bersertifikat) menyediakan pengawalan berlapis untuk Anda dan keluarga. Kami menerapkan protokol pengamanan rute, sterilisasi area, dan penjagaan jarak dekat tanpa mengorbankan kenyamanan dan privasi Anda dalam beraktivitas.',
+      id: "01",
+      title: "Bodyguard VIP",
+      subtitle: "Pengawalan Taktis Melekat",
+      desc: "Sengketa finansial level atas rentan memicu ancaman fisik maupun intimidasi. Agen taktis kami (eks-prajurit & profesional bersertifikat) menyediakan pengawalan berlapis untuk Anda dan keluarga. Kami menerapkan protokol pengamanan rute, sterilisasi area, dan penjagaan jarak dekat tanpa mengorbankan kenyamanan dan privasi Anda dalam beraktivitas.",
       icon: <ShieldAlert className="w-12 h-12 text-gold" />,
       features: [
-        'Protokol Ancaman Darurat',
-        'Sterilisasi Lingkungan Cincin 1',
-        'Driver Taktis & Evakuasi',
+        "Protokol Ancaman Darurat",
+        "Sterilisasi Lingkungan Cincin 1",
+        "Driver Taktis & Evakuasi",
       ],
-      img: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=1000&q=80',
+      img: "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=1000&q=80",
     },
     {
-      id: '02',
-      title: 'Detektif Swasta',
-      subtitle: 'Intelijen & Verifikasi Investigatif',
-      desc: 'Keputusan strategis membutuhkan informasi absolut. Divisi detektif swasta kami bergerak di bawah radar untuk mengumpulkan bukti konkret, mengaudit rekam jejak kriminal atau finansial lawan, hingga membongkar kedok penggelapan tak terlihat. Kami menguasai social engineering dan cyber-tracking untuk mengungkap apa yang ingin disembunyikan lawan.',
+      id: "02",
+      title: "Detektif Swasta",
+      subtitle: "Intelijen & Verifikasi Investigatif",
+      desc: "Keputusan strategis membutuhkan informasi absolut. Divisi detektif swasta kami bergerak di bawah radar untuk mengumpulkan bukti konkret, mengaudit rekam jejak kriminal atau finansial lawan, hingga membongkar kedok penggelapan tak terlihat. Kami menguasai social engineering dan cyber-tracking untuk mengungkap apa yang ingin disembunyikan lawan.",
       icon: <Search className="w-12 h-12 text-gold" />,
       features: [
-        'Background Profiling',
-        'Deep-web Asset Tracking',
-        'Pengintaian & Observasi Terselubung',
+        "Background Profiling",
+        "Deep-web Asset Tracking",
+        "Pengintaian & Observasi Terselubung",
       ],
-      img: 'https://images.unsplash.com/photo-1453873531674-2151bcd01707?auto=format&fit=crop&w=1000&q=80',
+      img: "https://images.unsplash.com/photo-1453873531674-2151bcd01707?auto=format&fit=crop&w=1000&q=80",
     },
     {
-      id: '03',
-      title: 'Pengamanan',
-      subtitle: 'Keamanan Aset & Stabilitas Operasional',
-      desc: 'Keamanan perimeter adalah garis pertahanan pertama. Layanan ini memastikan lokasi kantor utama, kediaman pribadi, titik logistik, hingga event korporasi Anda tidak tersentuh oleh pihak tak berkepentingan. Dilengkapi sistem manajemen krisis untuk membendung ancaman demonstrasi massal, sabotase rival bisnis, atau intervensi pihak ketiga.',
+      id: "03",
+      title: "Pengamanan",
+      subtitle: "Keamanan Aset & Stabilitas Operasional",
+      desc: "Keamanan perimeter adalah garis pertahanan pertama. Layanan ini memastikan lokasi kantor utama, kediaman pribadi, titik logistik, hingga event korporasi Anda tidak tersentuh oleh pihak tak berkepentingan. Dilengkapi sistem manajemen krisis untuk membendung ancaman demonstrasi massal, sabotase rival bisnis, atau intervensi pihak ketiga.",
       icon: <Shield className="w-12 h-12 text-gold" />,
       features: [
-        'Manajemen Keamanan Event Massal',
-        'Patroli Statis & Dinamis',
-        'Sistem Pengamanan Ring Berlapis',
+        "Manajemen Keamanan Event Massal",
+        "Patroli Statis & Dinamis",
+        "Sistem Pengamanan Ring Berlapis",
       ],
-      img: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1000&q=80',
+      img: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1000&q=80",
     },
     {
-      id: '04',
-      title: 'Secure VIP',
-      subtitle: 'Protokol Evakuasi & Transit Rahasia',
-      desc: 'Setiap pergerakan Anda adalah aset. Protokol VIP Transit kami dirancang untuk penjemputan rahasia, pengawalan bandara aspal-ke-pesawat (tarmac-to-plane), hingga transportasi kendaraan anti-peluru. Mobilitas Anda dienkripsi sehingga meminimalisir kemungkinan intersepsi musuh di area publik atau dalam perjalanan antar negara.',
+      id: "04",
+      title: "Secure VIP",
+      subtitle: "Protokol Evakuasi & Transit Rahasia",
+      desc: "Setiap pergerakan Anda adalah aset. Protokol VIP Transit kami dirancang untuk penjemputan rahasia, pengawalan bandara aspal-ke-pesawat (tarmac-to-plane), hingga transportasi kendaraan anti-peluru. Mobilitas Anda dienkripsi sehingga meminimalisir kemungkinan intersepsi musuh di area publik atau dalam perjalanan antar negara.",
       icon: <Plane className="w-12 h-12 text-gold" />,
       features: [
-        'Tarmac-to-Plane Escort',
-        'Armored Transport (Kendaraan Taktis)',
-        'Secure Route Encryption',
+        "Tarmac-to-Plane Escort",
+        "Armored Transport (Kendaraan Taktis)",
+        "Secure Route Encryption",
       ],
-      img: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80',
+      img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
     },
   ];
 
@@ -191,7 +191,7 @@ export default function ServicesPage() {
       >
         <div className="absolute inset-0 z-0 h-full w-full">
           <Image
-            src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=1920&q=80"
+            src="/gallery1.webp"
             alt="Sentinel Services"
             fill
             className="hero-img object-cover object-center"
@@ -288,16 +288,16 @@ export default function ServicesPage() {
                 <div className="space-y-8">
                   {[
                     {
-                      title: 'Asset Tracing & Profiling',
-                      desc: 'Kami menggunakan intelijen tingkat tinggi untuk membedah struktur perusahaan cangkang dan rekening offshore, melacak setiap rupiah milik Anda yang disembunyikan lawan.',
+                      title: "Asset Tracing & Profiling",
+                      desc: "Kami menggunakan intelijen tingkat tinggi untuk membedah struktur perusahaan cangkang dan rekening offshore, melacak setiap rupiah milik Anda yang disembunyikan lawan.",
                     },
                     {
-                      title: 'Tactical Persuasion & Negotiation',
-                      desc: 'Dilengkapi data akurat atas kelemahan target, kami merumuskan pressure psikotropik dan negosiasi persisten yang memaksa lawan menyelesaikan kewajiban tanpa perlu kekerasan fisik.',
+                      title: "Tactical Persuasion & Negotiation",
+                      desc: "Dilengkapi data akurat atas kelemahan target, kami merumuskan pressure psikotropik dan negosiasi persisten yang memaksa lawan menyelesaikan kewajiban tanpa perlu kekerasan fisik.",
                     },
                     {
-                      title: 'Legal & Field Execution',
-                      desc: 'Bila eskalasi tak terhindarkan, kami mendampingi kurator hukum untuk melakukan penyitaan dan sita jaminan secara fisik, dilengkapi proteksi penjagaan melekat di titik krusial.',
+                      title: "Legal & Field Execution",
+                      desc: "Bila eskalasi tak terhindarkan, kami mendampingi kurator hukum untuk melakukan penyitaan dan sita jaminan secara fisik, dilengkapi proteksi penjagaan melekat di titik krusial.",
                     },
                   ].map((step, i) => (
                     <div key={i} className="main-service-reveal flex gap-6">

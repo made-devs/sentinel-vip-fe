@@ -129,46 +129,46 @@ export default function ServicesPage() {
       id: "01",
       title: "Bodyguard VIP",
       subtitle: "Pengawalan Taktis Melekat",
-      desc: "Sengketa finansial level atas rentan memicu ancaman fisik maupun intimidasi. Agen taktis kami (eks-prajurit & profesional bersertifikat) menyediakan pengawalan berlapis untuk Anda dan keluarga. Kami menerapkan protokol pengamanan rute, sterilisasi area, dan penjagaan jarak dekat tanpa mengorbankan kenyamanan dan privasi Anda dalam beraktivitas.",
+      desc: "Dalam situasi berisiko tinggi, kami menghadirkan pengawalan VIP dengan standar tertinggi—bukan sekadar penjagaan, tetapi sistem perlindungan menyeluruh. Didukung tim profesional berpengalaman, setiap pergerakan Anda kami kendalikan dengan strategi presisi, memastikan keamanan, kenyamanan, dan privasi tetap terjaga tanpa kompromi.",
       icon: <ShieldAlert className="w-12 h-12 text-gold" />,
       features: [
         "Protokol Ancaman Darurat",
         "Sterilisasi Lingkungan Cincin 1",
         "Driver Taktis & Evakuasi",
       ],
-      img: "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=1000&q=80",
+      img: "/bodyguard2.webp",
     },
     {
       id: "02",
       title: "Detektif Swasta",
       subtitle: "Intelijen & Verifikasi Investigatif",
-      desc: "Keputusan strategis membutuhkan informasi absolut. Divisi detektif swasta kami bergerak di bawah radar untuk mengumpulkan bukti konkret, mengaudit rekam jejak kriminal atau finansial lawan, hingga membongkar kedok penggelapan tak terlihat. Kami menguasai social engineering dan cyber-tracking untuk mengungkap apa yang ingin disembunyikan lawan.",
+      desc: "Dengan pendekatan investigatif profesional, kami menelusuri setiap detail dari aliran finansial hingga pola aktivitas target—untuk memberikan gambaran utuh yang tidak bisa dibantah. Semua dilakukan secara terukur, rahasia, dan berorientasi hasil.",
       icon: <Search className="w-12 h-12 text-gold" />,
       features: [
         "Background Profiling",
         "Deep-web Asset Tracking",
         "Pengintaian & Observasi Terselubung",
       ],
-      img: "https://images.unsplash.com/photo-1453873531674-2151bcd01707?auto=format&fit=crop&w=1000&q=80",
+      img: "/bodyguard.webp",
     },
     {
       id: "03",
       title: "Pengamanan",
       subtitle: "Keamanan Aset & Stabilitas Operasional",
-      desc: "Keamanan perimeter adalah garis pertahanan pertama. Layanan ini memastikan lokasi kantor utama, kediaman pribadi, titik logistik, hingga event korporasi Anda tidak tersentuh oleh pihak tak berkepentingan. Dilengkapi sistem manajemen krisis untuk membendung ancaman demonstrasi massal, sabotase rival bisnis, atau intervensi pihak ketiga.",
+      desc: "Kami menghadirkan sistem pengamanan terintegrasi untuk melindungi aset, operasional, dan reputasi Anda. Mulai dari area bisnis, kediaman, hingga event strategis, setiap titik diamankan dengan pendekatan berlapis, memastikan tidak ada celah bagi ancaman untuk masuk.",
       icon: <Shield className="w-12 h-12 text-gold" />,
       features: [
         "Manajemen Keamanan Event Massal",
         "Patroli Statis & Dinamis",
         "Sistem Pengamanan Ring Berlapis",
       ],
-      img: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1000&q=80",
+      img: "/pengamanan2.webp",
     },
     {
       id: "04",
       title: "Secure VIP",
       subtitle: "Protokol Evakuasi & Transit Rahasia",
-      desc: "Setiap pergerakan Anda adalah aset. Protokol VIP Transit kami dirancang untuk penjemputan rahasia, pengawalan bandara aspal-ke-pesawat (tarmac-to-plane), hingga transportasi kendaraan anti-peluru. Mobilitas Anda dienkripsi sehingga meminimalisir kemungkinan intersepsi musuh di area publik atau dalam perjalanan antar negara.",
+      desc: "Layanan Secure VIP kami dirancang untuk memastikan mobilitas Anda berlangsung aman, terkontrol, dan tanpa eksposur. Mulai dari penjemputan rahasia, pengawalan bandara hingga kendaraan khusus, setiap detail diatur dengan presisi untuk meminimalkan risiko dan menjaga privasi Anda di setiap perjalanan.",
       icon: <Plane className="w-12 h-12 text-gold" />,
       features: [
         "Tarmac-to-Plane Escort",
@@ -191,7 +191,7 @@ export default function ServicesPage() {
       >
         <div className="absolute inset-0 z-0 h-full w-full">
           <Image
-            src="/gallery1.webp"
+            src="/servicehero.webp"
             alt="Sentinel Services"
             fill
             className="hero-img object-cover object-center"
@@ -212,9 +212,7 @@ export default function ServicesPage() {
             </h1>
           </div>
           <p className="hero-subtitle text-lg md:text-xl text-text-muted font-light max-w-2xl mx-auto">
-            Dari pemulihan aset bernilai triliunan (Debt Recovery) hingga pagar
-            betis taktis menyeluruh. Layanan kami dirancang untuk memenangkan
-            pertempuran sebelum arena terbuka.
+            Dari pemulihan aset bernilai besar hingga penanganan kasus kompleks, setiap layanan kami dirancang dengan strategi terukur dan eksekusi presisi. Kami memastikan satu hal: hak Anda kembali, secara profesional, aman, dan terukur
           </p>
         </div>
       </section>
@@ -223,18 +221,18 @@ export default function ServicesPage() {
       <section ref={mainServiceRef} className="relative py-32 w-full bg-dark">
         <div className="container mx-auto px-6 max-w-7xl">
           {/* Main Title */}
-          <div className="main-service-reveal flex flex-col md:flex-row gap-8 items-end justify-between mb-20">
-            <div className="w-full md:w-2/3">
+          <div className="main-service-reveal flex flex-col gap-8 mb-20">
+            <div className="w-full">
               <h4 className="text-gold uppercase tracking-[0.3em] font-semibold text-sm mb-4 flex items-center gap-4">
                 <span className="w-10 h-[1px] bg-gold"></span> Layanan Utama
                 Eksekutif
               </h4>
-              <h2 className="text-5xl md:text-7xl font-heading font-bold uppercase text-white leading-none">
+              <h2 className="text-5xl md:text-7xl font-heading font-bold uppercase text-white leading-tight">
                 Debt Recovery <br />
-                <span className="text-white/30">(Pemulihan Aset)</span>
+                <span className="text-gold">(Pemulihan Aset)</span>
               </h2>
             </div>
-            <div className="w-full md:w-1/3 text-lg font-light text-text-muted">
+            <div className="w-full max-w-3xl text-lg font-light text-text-muted leading-relaxed">
               Pendekatan penyelesaian sengketa kelas tinggi yang bertumpu pada
               investigasi mendalam, negosiasi psikologis, dan penekanan
               strategis tanpa mengorbankan wibawa maupun nama baik korporat
@@ -247,7 +245,7 @@ export default function ServicesPage() {
               {/* Left Image Side */}
               <div className="main-service-reveal w-full lg:w-5/12 relative aspect-square lg:aspect-auto">
                 <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80"
+                  src="/gallery1.webp"
                   alt="Debt Recovery Investigation"
                   fill
                   className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
@@ -262,7 +260,7 @@ export default function ServicesPage() {
                         Target Fokus
                       </p>
                       <p className="text-white font-heading font-bold text-xl">
-                        Sengketa Nilai Besar & Penggelapan VVIP
+                        Kami Ambil Kembali Apa yang Seharusnya Milik Anda
                       </p>
                     </div>
                     <Network className="w-10 h-10 text-gold" />
@@ -273,31 +271,26 @@ export default function ServicesPage() {
               {/* Right Content Side */}
               <div className="w-full lg:w-7/12 p-8 md:p-16 flex flex-col justify-center">
                 <h3 className="main-service-reveal text-3xl md:text-4xl font-heading font-bold text-white mb-8 border-b border-white/10 pb-8">
-                  Lebih Dari Sekadar Penagihan. Ini Adalah Pengembalian Hak
-                  Terstruktur.
+                  Lebih dari sekadar penagihan. Ini adalah pemulihan hak yang terstruktur.
                 </h3>
 
                 <p className="main-service-reveal text-lg text-text-muted font-light mb-10 leading-relaxed">
-                  Menghadapi sengketa korporat, konflik pemegang saham, atau
-                  kredit macet bernilai masif membutuhkan resolusi tajam di luar
-                  koridor peringatan hukum pasif. Kami bertindak layaknya
-                  bayangan yang mengepung target secara persisten, cerdik, dan
-                  bertenaga.
+                  Menghadapi sengketa korporat, konflik pemegang saham, hingga kredit macet bernilai besar, dibutuhkan lebih dari sekadar penagihan biasa. Kami menghadirkan strategi terukur, pendekatan profesional, dan eksekusi presisi untuk memastikan setiap kasus bergerak menuju satu tujuan: penyelesaian dan pengembalian hak Anda secara nyata.
                 </p>
 
                 <div className="space-y-8">
                   {[
                     {
-                      title: "Asset Tracing & Profiling",
-                      desc: "Kami menggunakan intelijen tingkat tinggi untuk membedah struktur perusahaan cangkang dan rekening offshore, melacak setiap rupiah milik Anda yang disembunyikan lawan.",
+                      title: "Asset Analysis & Financial Profiling",
+                      desc: "Kami memetakan struktur aset dan posisi finansial secara menyeluruh, termasuk aset tersembunyi dan aliran dana, untuk membuka seluruh potensi pemulihan secara akurat dan terarah.",
                     },
                     {
-                      title: "Tactical Persuasion & Negotiation",
-                      desc: "Dilengkapi data akurat atas kelemahan target, kami merumuskan pressure psikotropik dan negosiasi persisten yang memaksa lawan menyelesaikan kewajiban tanpa perlu kekerasan fisik.",
+                      title: "Strategic Negotiation & Controlled Pressure",
+                      desc: "Berbasis data dan analisis mendalam, kami menjalankan pendekatan negosiasi profesional dengan tekanan terukur untuk mendorong penyelesaian secara efektif—tanpa konflik yang merugikan.",
                     },
                     {
-                      title: "Legal & Field Execution",
-                      desc: "Bila eskalasi tak terhindarkan, kami mendampingi kurator hukum untuk melakukan penyitaan dan sita jaminan secara fisik, dilengkapi proteksi penjagaan melekat di titik krusial.",
+                      title: "Legal Support & Field Execution",
+                      desc: "Didukung oleh Sentinel Law Firm, setiap langkah dilaksanakan secara terstruktur dan aman. Mulai dari pendekatan hukum hingga eksekusi lapangan, seluruh proses dirancang untuk memastikan hasil yang nyata dan dapat dipertanggungjawabkan.",
                     },
                   ].map((step, i) => (
                     <div key={i} className="main-service-reveal flex gap-6">

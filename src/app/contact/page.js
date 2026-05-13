@@ -15,6 +15,25 @@ export default function ContactPage() {
   const heroRef = useRef(null);
   const heroTextRef = useRef(null);
   const formRef = useRef(null);
+  const formValues = useRef({
+    name: "",
+    contact: "",
+    type: "",
+    message: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, contact, type, message } = formValues.current;
+    
+    const whatsappMessage = `Halo Sentinel VIP Indonesia,%0A%0ASaya ingin berkonsultasi mengenai layanan %2A${type}%2A.%0A%0A%2ANama:%2A ${name}%0A%2AKontak:%2A ${contact}%0A%2APesan:%2A ${message}`;
+    
+    window.open(`https://wa.me/6285210000977?text=${whatsappMessage}`, "_blank");
+  };
+
+  const handleInputChange = (field, value) => {
+    formValues.current[field] = value;
+  };
 
   useEffect(() => {
     // 1. Initialize Lenis for smooth scrolling
@@ -149,21 +168,21 @@ export default function ContactPage() {
         >
           <div className="overflow-hidden mb-4">
             <h1 className="hero-title-line text-5xl md:text-8xl font-heading font-bold uppercase tracking-wider text-white">
-              JALUR
+              HUBUNGI
             </h1>
           </div>
           <div className="overflow-hidden mb-8">
             <h1 className="hero-title-line text-5xl md:text-8xl font-heading font-bold uppercase tracking-wider text-gold">
-              KOMANDO.
+              KAMI.
             </h1>
           </div>
           <p className="hero-subtitle text-lg md:text-xl text-text-muted font-light max-w-2xl mx-auto">
-            Akses langsung ke jaringan intelijen dan taktis kami. Waktu adalah aset berharga; kami memastikan respon cepat dengan privasi absolut untuk setiap laporan Anda.
+            Kami siap membantu Anda dalam penanganan sengketa, perlindungan aset, dan kebutuhan keamanan VIP lainnya secara profesional dan rahasia.
           </p>
         </div>
       </section>
 
-      {/* 2. VIP COMMUNICATION PROTOCOL (THE MINDBLOWING SECTION) */}
+      {/* 2. CONTACT INFORMATION SECTION */}
       <section className="relative py-24 lg:py-32 w-full z-10">
         <div className="container mx-auto px-6 max-w-7xl">
           
@@ -172,21 +191,21 @@ export default function ContactPage() {
             {[
               {
                 icon: <Phone className="w-8 h-8 text-gold mb-6" />,
-                title: 'Hotline Darurat',
-                value: '+62 811 999 8888',
-                desc: 'Tersedia 24/7 untuk eskalasi kasus tingkat tinggi.',
+                title: 'WhatsApp Resmi',
+                value: '0852 1000 0977',
+                desc: 'Tersedia untuk konsultasi cepat dan respon darurat.',
               },
               {
                 icon: <Mail className="w-8 h-8 text-gold mb-6" />,
-                title: 'Transmisi Terenkripsi',
-                value: 'ops@sentinelvip.id',
-                desc: 'Komunikasi email via server terproteksi protokol militer.',
+                title: 'Email Resmi',
+                value: 'sentinelvipindonesia@gmail.com',
+                desc: 'Layanan korespondensi untuk kebutuhan dokumen dan proposal.',
               },
               {
                 icon: <MapPin className="w-8 h-8 text-gold mb-6" />,
-                title: 'Markas Operasional',
-                value: 'SCBD, Jakarta Selatan',
-                desc: 'Akses kunjungan strictly by exclusive appointment only.',
+                title: 'Kantor Pusat',
+                value: 'Kelapa Gading, Jakarta Utara',
+                desc: 'Kunjungan dilakukan dengan janji temu terlebih dahulu.',
               },
             ].map((contact, idx) => (
               <div 
@@ -199,7 +218,7 @@ export default function ContactPage() {
                 <div className="relative z-10">
                   {contact.icon}
                   <h3 className="text-white font-heading font-bold uppercase tracking-widest mb-2">{contact.title}</h3>
-                  <div className="text-2xl font-mono text-gold mb-4">{contact.value}</div>
+                  <div className="text-[18px] font-mono text-gold mb-4">{contact.value}</div>
                   <p className="text-sm font-light text-text-muted">{contact.desc}</p>
                 </div>
 
@@ -216,97 +235,88 @@ export default function ContactPage() {
               <div className="flex items-center gap-3 mb-10 form-element">
                 <ShieldAlert className="w-6 h-6 text-gold" />
                 <h2 className="text-3xl font-heading font-bold text-white uppercase tracking-widest">
-                  Transmisi <span className="text-gold">Aman</span>
+                  Hubungi <span className="text-gold">Tim Kami</span>
                 </h2>
               </div>
               
-              <form className="space-y-8">
+              <form className="space-y-8" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2 form-element">
-                    <label className="text-xs uppercase tracking-[0.2em] text-text-muted font-bold">Identitas Klien / Perusahaan</label>
+                    <label className="text-xs uppercase tracking-[0.2em] text-text-muted font-bold">Nama / Perusahaan</label>
                     <input 
                       type="text" 
+                      required
+                      onChange={(e) => handleInputChange("name", e.target.value)}
                       className="w-full bg-dark border-b border-white/20 px-0 py-3 text-white focus:outline-none focus:border-gold focus:ring-0 transition-colors font-light"
                       placeholder="Nama Lengkap / PT"
                     />
                   </div>
                   <div className="space-y-2 form-element">
-                    <label className="text-xs uppercase tracking-[0.2em] text-text-muted font-bold">Kontak Utama</label>
+                    <label className="text-xs uppercase tracking-[0.2em] text-text-muted font-bold">Nomor Telepon</label>
                     <input 
                       type="text" 
+                      required
+                      onChange={(e) => handleInputChange("contact", e.target.value)}
                       className="w-full bg-dark border-b border-white/20 px-0 py-3 text-white focus:outline-none focus:border-gold focus:ring-0 transition-colors font-light"
-                      placeholder="Nomor Telepon / WhatsApp"
+                      placeholder="Nomor WhatsApp"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2 form-element">
-                  <label className="text-xs uppercase tracking-[0.2em] text-text-muted font-bold">Klasifikasi Kasus</label>
+                  <label className="text-xs uppercase tracking-[0.2em] text-text-muted font-bold">Jenis Layanan</label>
                   <select 
                     defaultValue="" 
+                    required
+                    onChange={(e) => handleInputChange("type", e.target.value)}
                     className="w-full bg-dark border-b border-white/20 px-0 py-3 text-white focus:outline-none focus:border-gold focus:ring-0 transition-colors font-light appearance-none rounded-none cursor-pointer"
                   >
-                    <option value="" disabled>Pilih Jenis Resolusi Yang Dibutuhkan</option>
-                    <option value="debt-recovery">Debt Recovery / Eksekusi Aset</option>
-                    <option value="bodyguard">Pengamanan VVIP (Bodyguard)</option>
-                    <option value="investigation">Investigasi Intelijen Swasta</option>
-                    <option value="other">Kebutuhan Spesifik Lainnya</option>
+                    <option value="" disabled>Pilih Layanan</option>
+                    <option value="Debt Recovery">Debt Recovery / Penagihan Aset</option>
+                    <option value="Bodyguard">Pengamanan VVIP (Bodyguard)</option>
+                    <option value="Investigasi">Investigasi Swasta</option>
+                    <option value="Lainnya">Lainnya</option>
                   </select>
                 </div>
 
                 <div className="space-y-2 form-element">
-                  <label className="text-xs uppercase tracking-[0.2em] text-text-muted font-bold">Brief Laporan (Aman & Rahasia)</label>
+                  <label className="text-xs uppercase tracking-[0.2em] text-text-muted font-bold">Deskripsi Kebutuhan</label>
                   <textarea 
                     rows={4}
+                    required
+                    onChange={(e) => handleInputChange("message", e.target.value)}
                     className="w-full bg-dark border-b border-white/20 px-0 py-3 text-white focus:outline-none focus:border-gold focus:ring-0 transition-colors font-light resize-none"
-                    placeholder="Jelaskan ringkasan situasi finansial atau keamanan Anda..."
+                    placeholder="Jelaskan secara singkat kebutuhan Anda..."
                   ></textarea>
                 </div>
 
                 <button 
-                  type="button" 
+                  type="submit" 
                   className="form-element group relative inline-flex items-center justify-center gap-3 bg-gold text-dark px-10 py-5 w-full uppercase tracking-[0.2em] text-sm font-bold overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center gap-3">
-                    Kirim Transmisi <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    Kirim Pesan <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]"></div>
                 </button>
                 <p className="text-[10px] text-center text-text-muted font-light uppercase tracking-widest form-element">
-                  * Protokol enkripsi end-to-end terenkripsi aktif. Data Anda terlindungi.
+                  * Kerahasiaan data Anda adalah prioritas kami.
                 </p>
               </form>
             </div>
 
-            {/* VISUAL / MAP INDICATOR */}
-            <div className="col-span-1 lg:col-span-5 h-[600px] lg:h-full min-h-[500px] relative rounded-xl overflow-hidden border border-white/10 group">
-              <Image 
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1000&q=80" 
-                alt="Tactical Map" 
-                fill 
-                className="object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-dark/60"></div>
-              
-              <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none p-8 text-center map-visual">
-                <div className="w-32 h-32 relative mb-6">
-                  <div className="absolute inset-0 bg-gold/20 rounded-full animate-ping"></div>
-                  <div className="absolute inset-4 bg-gold/40 rounded-full animate-pulse"></div>
-                  <div className="absolute inset-8 bg-gold rounded-full flex items-center justify-center text-dark">
-                    <Crosshair className="w-6 h-6" />
-                  </div>
-                </div>
-                <h3 className="text-white font-heading font-bold text-2xl uppercase tracking-widest mb-2">Tracking Aktif</h3>
-                <p className="text-gold font-mono text-sm tracking-widest mb-6">S 6° 13' 35.8" | E 106° 48' 28.5"</p>
-                
-                <div className="flex items-center gap-2 bg-dark/80 backdrop-blur-sm border border-white/10 px-6 py-3 rounded-full">
-                  <Clock className="w-4 h-4 text-gold" />
-                  <span className="text-xs text-white uppercase tracking-widest">SLA Respon: &lt; 15 Menit</span>
-                </div>
-              </div>
-              
-              {/* Radar scanner effect overlay */}
-              <div className="absolute inset-0 z-10 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,#000_100%)] border-[1px] border-gold/10 rounded-xl" style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 2px, rgba(255,215,0,0.05) 2px, rgba(255,215,0,0.05) 4px)' }}></div>
+            {/* GOOGLE MAPS EMBED */}
+            <div className="col-span-1 lg:col-span-5 h-[500px] lg:h-full min-h-[400px] relative rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.7016890477084!2d106.8996948758676!3d-6.17068326047236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b7d2a8d97f9%3A0xbdb668dad4a8a73a!2sSentinel%20VIP%20Indonesia!5e0!3m2!1sen!2sid!4v1778666848778!5m2!1sen!2sid" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, filter: 'grayscale(1) invert(0.9) contrast(1.2)' }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="opacity-80"
+              ></iframe>
             </div>
 
           </div>

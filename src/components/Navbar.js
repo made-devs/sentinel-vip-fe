@@ -78,7 +78,7 @@ export default function Navbar() {
             href="/"
             className="relative z-50 flex items-center gap-3 group"
           >
-            <div className="relative w-12 h-12 transition-transform duration-500 group-hover:scale-105">
+            <div className="relative w-18 h-18 transition-transform duration-500 group-hover:scale-105">
               <Image
                 src="/logo-vip.webp"
                 alt="Sentinel VIP Logo"
@@ -88,10 +88,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col hidden sm:flex">
-              <span className="font-heading font-bold text-xl leading-none tracking-widest uppercase text-text-offwhite group-hover:text-gold transition-colors duration-300">
+              <span className="font-heading font-bold text-[20px] leading-none tracking-widest uppercase text-text-offwhite group-hover:text-gold transition-colors duration-300">
                 Sentinel
               </span>
-              <span className="text-[9px] tracking-[0.4em] text-gold/80 uppercase mt-1">
+              <span className="text-[9.2px] tracking-[0.4em] text-gold/80 uppercase mt-1">
                 VIP Indonesia
               </span>
             </div>

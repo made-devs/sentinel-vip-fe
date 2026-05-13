@@ -69,7 +69,7 @@ export default function ContactFooterSection() {
 
           <div className="w-full md:w-2/5 flex flex-col space-y-4 relative z-10">
             <a
-              href="https://wa.me/6281234567890"
+              href="https://wa.me/6285210000977"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-between w-full bg-gold p-6 rounded-xl hover:bg-gold-light transition-all duration-300 shadow-xl"
@@ -79,7 +79,7 @@ export default function ContactFooterSection() {
                   WhatsApp Resmi
                 </span>
                 <span className="text-xl font-bold font-heading">
-                  +62 812-3456-7890
+                  0852 1000 0977
                 </span>
               </div>
               <div className="bg-dark text-gold p-3 rounded-full group-hover:scale-110 transition-transform">
@@ -88,7 +88,7 @@ export default function ContactFooterSection() {
             </a>
 
             <a
-              href="mailto:contact@sentinelvip.id"
+              href="mailto:sentinelvipindonesia@gmail.com"
               className="group flex items-center justify-between w-full border border-gold/50 bg-dark-secondary p-6 rounded-xl hover:border-gold transition-all duration-300"
             >
               <div className="flex flex-col">
@@ -96,7 +96,7 @@ export default function ContactFooterSection() {
                   Kirim Surel
                 </span>
                 <span className="text-lg text-white font-medium">
-                  contact@sentinelvip.id
+                  sentinelvipindonesia@gmail.com
                 </span>
               </div>
               <Mail className="w-8 h-8 text-gold opacity-50 group-hover:opacity-100 transition-opacity" />
@@ -105,9 +105,9 @@ export default function ContactFooterSection() {
         </div>
 
         {/* Footer Bottom Setup */}
-        <div className="py-16 mt-16 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
+        <div className="py-16 mt-16 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo & Intro */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative w-12 h-12">
                 <Image
@@ -127,7 +127,7 @@ export default function ContactFooterSection() {
                 </span>
               </div>
             </Link>
-            <p className="text-sm text-text-muted font-light leading-relaxed pr-6">
+            <p className="text-sm text-text-muted font-light leading-relaxed">
               Layanan eksekutif pilihan utama dalam intelijen swasta, negosiasi
               utang VIP, dan perlindungan aset kelas atas di Indonesia.
             </p>
@@ -183,16 +183,35 @@ export default function ContactFooterSection() {
               <li className="flex items-start gap-4">
                 <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
                 <span className="text-sm font-light text-text-muted leading-relaxed">
-                  Gedung Equity Tower, SCBD <br />
-                  Lantai 42, Jl. Jend. Sudirman Kav. 52-53 <br />
-                  Jakarta Selatan, 12190
+                  Ruko, Jl. Sumagung 3 No.15 Blok P2, RT.14/RW.2, Klp. Gading Tim., Kec. Klp. Gading, Jkt Utara, 14240
                 </span>
               </li>
               <li className="flex items-center gap-4">
                 <Phone className="w-5 h-5 text-gold" />
                 <span className="text-sm font-light text-text-muted">
-                  Hunting: (021) 1234-5678
+                  0852 1000 0977
                 </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* New Column: Operational Hours to fill the gap */}
+          <div className="space-y-6">
+            <h4 className="text-gold font-bold uppercase tracking-[0.2em] text-sm">
+              Operational
+            </h4>
+            <ul className="space-y-4 flex flex-col">
+              <li className="flex flex-col">
+                <span className="text-xs text-white/50 uppercase tracking-widest mb-1">Senin - Jumat</span>
+                <span className="text-sm font-light text-text-muted">09:00 - 18:00 WIB</span>
+              </li>
+              <li className="flex flex-col">
+                <span className="text-xs text-white/50 uppercase tracking-widest mb-1">Sabtu</span>
+                <span className="text-sm font-light text-text-muted">By Appointment</span>
+              </li>
+              <li className="flex flex-col">
+                <span className="text-xs text-gold uppercase tracking-widest mb-1">Emergency 24/7</span>
+                <span className="text-sm font-light text-text-muted">Layanan Siaga Non-Stop</span>
               </li>
             </ul>
           </div>

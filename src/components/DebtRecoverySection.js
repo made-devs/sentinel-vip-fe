@@ -68,26 +68,26 @@ export default function DebtRecoverySection() {
   const steps = [
     {
       icon: <Briefcase className="w-8 h-8 text-gold" />,
-      title: '1. Analisis & Investigasi Aset',
+      title: '1. Asset Intelligence & Deep Investigation',
       desc: 'Menelusuri profil finansial debitur secara mendalam, memetakan aset tersembunyi, dan menilai kapasitas pengembalian secara legal.',
       img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     },
     {
       icon: <FileText className="w-8 h-8 text-gold" />,
-      title: '2. Pendekatan Hukum & Somasi',
-      desc: 'Melakukan teguran keras (Somasi) berbasis legalitas, mendesak debitur untuk menyelesaikan kewajiban tanpa harus ke pengadilan terbuka.',
+      title: '2. Strategic Legal Approach by Sentinel Law Firm',
+      desc: 'Setiap langkah didukung oleh Sentinel Law Firm, memastikan pendekatan hukum yang terstruktur, kredibel, dan memiliki kekuatan untuk mendorong penyelesaian lebih cepat.',
       img: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80',
     },
     {
       icon: <ShieldAlert className="w-8 h-8 text-gold" />,
-      title: '3. Eksekusi Lapangan & Mediasi',
-      desc: 'Tim eksekutor profesional turun langsung. Pendekatan persuasif tingkat tinggi namun tegas untuk memastikan pemulihan secara real.',
+      title: '3. Controlled Execution & Professional Negotiation',
+      desc: 'Eksekusi dilakukan secara terarah dengan pendekatan komunikasi tingkat tinggi, menjaga kendali situasi untuk mencapai kesepakatan yang optimal.',
       img: 'https://images.unsplash.com/photo-1616832880334-b1004d9808da?auto=format&fit=crop&w=800&q=80',
     },
     {
       icon: <Scale className="w-8 h-8 text-gold" />,
-      title: '4. Resolusi & Pengembalian',
-      desc: 'Memastikan aset kembali ke tangan Anda melalui perjanjian damai yang mengikat secara hukum atau sita aset jaminan.',
+      title: '4. Resolution & Asset Recovery',
+      desc: 'Fokus utama kami adalah pemulihan hak Anda. Melalui strategi penutupan yang efektif, kami mengamankan aset atau penyelesaian finansial yang menjadi hak Anda.',
       img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80',
     },
   ];
@@ -117,10 +117,7 @@ export default function DebtRecoverySection() {
                 <span className="text-gold italic font-light">Recovery</span>
               </h2>
               <p className="text-lg text-text-muted font-light leading-relaxed max-w-md">
-                Bukan sekadar menagih, tapi memulihkan hak Anda dengan strategi
-                investigasi kelas atas, tekanan legal, dan mediasi tingkat
-                tinggi. Tim purnawirawan khusus kami bekerja efisien, rahasia,
-                dan tanpa kompromi.
+                Bukan sekadar menagih, kami memastikan hak Anda kembali. Dengan strategi investigasi mendalam, tekanan terukur, dan eksekusi tanpa kompromi, setiap kasus kami arahkan pada satu tujuan: hasil nyata.
               </p>
 
               <div className="pt-8">

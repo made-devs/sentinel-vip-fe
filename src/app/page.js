@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { Shield, ChevronDown, CheckCircle } from "lucide-react";
 import DebtRecoverySection from "@/components/DebtRecoverySection";
+import BenefitsSection from "@/components/BenefitsSection";
 import CoreServicesSection from "@/components/CoreServicesSection";
 import GallerySection from "@/components/GallerySection";
 import TestimonialSection from "@/components/TestimonialSection";
@@ -123,18 +124,18 @@ export default function Home() {
             >
               <Shield className="w-5 h-5 text-gold" />
               <span className="text-gold uppercase tracking-widest text-sm font-semibold">
-                Eksklusivitas & Reputasi
+                Pertama di Indonesia
               </span>
             </div>
 
             <h1
               ref={addToTextRef}
-              className="text-5xl md:text-7xl lg:text-8xl text-text-offwhite leading-[1.1] uppercase"
+              className="text-5xl md:text-6xl lg:text-7xl text-text-offwhite leading-[1.1] uppercase"
             >
-              We Protect <br />
-              What{" "}
+              Penagihan Hutang <br />
+              Profesional <br />
               <span className="text-gold italic font-light font-heading">
-                Matters
+                12 Benefit Eksklusif
               </span>
             </h1>
 
@@ -142,10 +143,9 @@ export default function Home() {
               ref={addToTextRef}
               className="text-lg md:text-xl text-text-muted max-w-2xl font-light leading-relaxed"
             >
-              Penyedia jasa eksklusif{" "}
-              <strong className="text-white font-medium">Debt Recovery</strong>,
-              Bodyguard, Detektif Swasta, dan Pengamanan VIP Profesional di
-              Indonesia. Kami menjamin kerahasiaan, ketegasan, dan resolusi.
+              Penyedia eksklusif <strong className="text-white font-medium">Debt Recovery</strong>, 
+              Bodyguard, Detektif, & Pengamanan VIP dengan <strong className="text-white font-medium">12 Benefit</strong> senilai puluhan juta rupiah. 
+              Mengutamakan kerahasiaan, presisi strategi, dan eksekusi yang menghasilkan solusi nyata.
             </p>
 
             <div
@@ -179,6 +179,9 @@ export default function Home() {
 
       {/* Full-fledged Debt Recovery Section */}
       <DebtRecoverySection />
+
+      {/* 12 Exclusive Benefits Section */}
+      <BenefitsSection />
 
       {/* Core Executive Services Section */}
       <CoreServicesSection />

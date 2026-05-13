@@ -139,9 +139,7 @@ export default function CoreServicesSection() {
             <span className="text-gold italic font-light">Services</span>
           </h2>
           <p className="text-text-muted font-light max-w-2xl text-lg mt-4">
-            Beragam langkah mitigasi berlapis disediakan khusus untuk melindungi
-            kepentingan, kehormatan, dan keamanan Anda oleh paramiliter
-            eksklusif kami.
+            Layanan eksklusif dengan pendekatan berlapis untuk melindungi kepentingan, reputasi, dan keamanan Anda. Didukung tim profesional terlatih, setiap langkah dirancang presisi untuk memastikan kendali penuh dalam setiap situasi.
           </p>
         </div>
 

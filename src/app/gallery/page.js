@@ -147,46 +147,46 @@ export default function GalleryPage() {
 
   const col1Images = [
     {
-      img: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=800&q=80',
-      desc: 'Pengawalan Taktis Ring 1',
+      img: '/pengamanan2.webp',
+      desc: 'Pengawalan Taktis',
     },
     {
-      img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-      desc: 'Sterilisasi Ruang Rapat VVIP',
+      img: '/event2.webp',
+      desc: 'Pengamanan Event',
     },
     {
-      img: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80',
+      img: '/gallery2.webp',
       desc: 'Persiapan Operasi Lapangan',
     },
   ];
 
   const col2Images = [
     {
-      img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
+      img: '/gallery1.webp',
       desc: 'Negosiasi Penagihan Aset',
     },
     {
-      img: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
-      desc: 'Divisi Intelijen & Profiling',
+      img: '/servicehero.webp',
+      desc: 'Pengembalian Aset',
     },
     {
-      img: 'https://images.unsplash.com/photo-1453873531674-2151bcd01707?auto=format&fit=crop&w=800&q=80',
-      desc: 'Observasi Target Kasus',
+      img: '/gallery3.webp',
+      desc: 'Strategi Penagihan Aset',
     },
   ];
 
   const col3Images = [
     {
-      img: 'https://images.unsplash.com/photo-1583344654930-9b3de5e6d9b9?auto=format&fit=crop&w=800&q=80',
-      desc: 'Protokol Evakuasi Tarmac',
+      img: '/bodyguard.webp',
+      desc: 'Protokol Pengamanan VIP',
     },
     {
-      img: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80',
+      img: '/gallery5.webp',
       desc: 'Penjagaan Perimeter Aset',
     },
     {
-      img: 'https://images.unsplash.com/photo-1560179707-f14e90ae4f81?auto=format&fit=crop&w=800&q=80',
-      desc: 'Pemulihan Aset Tunai',
+      img: '/gallery6.webp',
+      desc: 'Mediasi Dengan Debitur',
     },
   ];
 
@@ -202,7 +202,7 @@ export default function GalleryPage() {
       >
         <div className="absolute inset-0 z-0 h-full w-full">
           <Image
-            src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&w=1920&q=80"
+            src="/galleryhero.webp"
             alt="Sentinel Gallery"
             fill
             className="hero-img object-cover object-top"
@@ -336,7 +336,7 @@ export default function GalleryPage() {
 
         <div className="full-img-container relative w-[80%] md:w-[40%] h-[50vh] md:h-[60vh] rounded-[40px] overflow-hidden border border-gold/30 opacity-70 flex items-center justify-center">
           <Image
-            src="https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&w=1920&q=80"
+            src="/servicehero.webp"
             alt="Sentinel Operation"
             fill
             className="full-img object-cover filter grayscale brightness-50"

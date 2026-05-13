@@ -117,21 +117,21 @@ export default function AboutPage() {
   const coreValues = [
     {
       title: 'Persuasif & Legal',
-      desc: 'Kami memprioritaskan negosiasi dan intelijen, memastikan penyelesaian sengketa hutang dan pengerukan aset kembali secara optimal tanpa menyalahi regulasi hukum.',
+      desc: 'Kami merancang setiap proses mediasi dengan presisi tinggi, memastikan kepentingan klien terlindungi dan posisi tetap unggul. Didukung kekuatan hukum dan strategi terukur, kami mengubah konflik menjadi kesepakatan yang menguntungkan.',
       icon: <Crosshair className="w-16 h-16 text-gold mb-6" />,
-      img: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=1000&q=80',
+      img: '/gallery1.webp',
     },
     {
       title: 'Proteksi Pasca-Kasus',
       desc: 'Tim pengamanan taktis (bodyguard) dan detektif kami menjadi tameng utama Anda selama hingga pasca proses investigasi dan penagihan berlangsung.',
       icon: <Shield className="w-16 h-16 text-gold mb-6" />,
-      img: 'https://images.unsplash.com/photo-1453873531674-2151bcd01707?auto=format&fit=crop&w=1000&q=80',
+      img: '/bodyguard2.webp',
     },
     {
       title: 'Kerahasiaan Mutlak',
       desc: 'Sengketa finansial tingkat VVIP menuntut privasi absolut. Kami menjamin kerahasiaan identitas dan reputasi korporat maupun personal Anda tertutup rapat.',
       icon: <Lock className="w-16 h-16 text-gold mb-6" />,
-      img: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80',
+      img: '/gallery4.webp',
     },
   ];
 
@@ -334,38 +334,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. STATISTICS / REACH */}
-      <section className="relative py-32 bg-dark border-t border-gold/10">
-        <div className="container mx-auto px-6 max-w-7xl text-center">
-          <div className="inline-flex items-center gap-3 border border-gold/30 px-6 py-2 rounded-full mb-12">
-            <Shield className="w-5 h-5 text-gold" />
-            <span className="text-sm font-semibold tracking-widest text-gold uppercase">
-              Kapasitas Operasional
-            </span>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-            {[
-              { label: 'Kota Operasional', value: '30+' },
-              { label: 'Agen Taktis', value: '150+' },
-              { label: 'Resolusi Kasus', value: '98%' },
-              { label: 'Lisensi Resmi', value: 'A++' },
-            ].map((stat, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col items-center justify-center p-6 border-b md:border-b-0 md:border-r border-white/5 last:border-0"
-              >
-                <h4 className="text-text-muted uppercase tracking-widest text-sm font-semibold mb-2">
-                  {stat.label}
-                </h4>
-                <p className="text-3xl md:text-5xl font-heading font-bold text-white uppercase">
-                  {stat.value}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FOOTER */}
       <ContactFooterSection />
